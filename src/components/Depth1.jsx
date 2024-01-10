@@ -1,5 +1,6 @@
-import {moongi2} from "./Home";
-import {useEffect, useState} from "react";
+import {moongi3} from "./Home";
+import {useDeferredValue, useEffect, useMemo, useState, useTransition} from "react";
+
 
 let moongi = "Depth1 component 파일입니다. - out"
 console.log(moongi)
@@ -15,6 +16,17 @@ export default function Depth1() {
     let [jibong, setMoongi] = useState(0)
     console.log(jibong, '실제값.')
     let [jibong2, setMoongi2] = useState(0)
+
+    let Jin = useDeferredValue(jibong)
+
+
+
+
+    useMemo(() => {
+        console.log("useMemo")
+        console.log(jibong)
+    }, [jibong])
+
 
     useEffect(() => {
         console.log('useEffect 실행됨1.')
