@@ -9,7 +9,11 @@ console.log(moongi)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
     <BrowserRouter>
+      {
+        console.log('index.js 최상위 파일입니다. - in')
+      }
         <App />
     </BrowserRouter>
 );
